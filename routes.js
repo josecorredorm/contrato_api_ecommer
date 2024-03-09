@@ -94,7 +94,7 @@ request:
 request:
         payload:
         {
-            id_usuario: Number;
+            id_carrito: Number;
         }
         Response:
         {
@@ -111,7 +111,7 @@ request:
 request:
         payload:
         {
-            id_usuario: Number;
+            id_carrito: Number;
             producto:{
                 id: Number;
                 cantidad: Number;
@@ -126,7 +126,7 @@ request:
 request:
         payload:
         {
-            id_usuario: Number;
+            id_carrito: Number;
             producto:{
                 id: Number;
                 cantidad: Number;
@@ -140,15 +140,13 @@ request:
 request:
         payload:
         {
-            id_usuario: Number;
+            id_carrito: Number;
             id_producto: Number;
         }
         Response:{
             statusCode: Number;
             msg: String;
         }
-
-
 
 //Rutas privadas
 
@@ -199,6 +197,23 @@ request:
                 stock: Number;
                 categoria: String;
                 img: String; 
+            }
+        }
+        Response:{
+            statusCode: Number;
+            msg: String;
+        }
+
+//PUT /producto/perfil/$id
+request:
+        payload:
+        {
+            token: String;
+            rol:String;
+            id: Number;
+            usuario:{
+                nombre_completo: String;
+                contraseña: String;
             }
         }
         Response:{
